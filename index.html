@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+</head>
+
+<body>
+    <div class="main-body ">
+        <div class="home main w-full min-h-screen bg-blue-400" id="home-section">
+            <div class="navbar-parent bg-black h-16 w-full text-center z-10 fixed top-0">
+                <div class="navbar 2xl:max-w-screen-2xl m-auto bg-black flex h-16 justify-between items-center ">
+
+                    <iconify-icon icon="dashicons:portfolio" class="px-8 z-10" style="color: white;" width="48"
+                        height="48"></iconify-icon>
+                    <ul class="navigation-large list-none text-white lg:text-xl gap-5 px-8 hidden lg:flex">
+                        <a href="#home-section">
+                            <li class="navigation-item">Home</li>
+                        </a>
+                        <a href="#about-section">
+                            <li class="navigation-item">About</li>
+                        </a>
+                        <a href="#service-section">
+                            <li class="navigation-item">Services</li>
+                        </a>
+                        <a href="#contact-section">
+                            <li class="navigation-item">Contact</li>
+                        </a>
+                    </ul>
+                    <div class="navbar_toggle z-10 lg:hidden px-4" id="mobile-menu">
+                        <span class="bar bg-white w-7 h-1 mt-1 rounded-full block"></span>
+                        <span class="bar bg-white w-7 h-1 mt-1 rounded-full block"></span>
+                        <span class="bar bg-white w-7 h-1 mt-1 rounded-full block"></span>
+                    </div>
+                    <div class="mobile-nav absolute pt-20 pb-4  lg:hidden w-screen rounded-b-3xl" id="mobile-nav">
+                        <ul class="navigation-mobile list-none flex flex-col items-center text-white gap-5">
+                            <a href="#home-section">
+                                <li class="navigation-item2">Home</li>
+                            </a>
+                            <a href="#about-section">
+                                <li class="navigation-item2">About</li>
+                            </a>
+                            <a href="#service-section">
+                                <li class="navigation-item2">Services</li>
+                            </a>
+                            <a href="#contact-section">
+                                <li class="navigation-item2">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="content-home 2xl:max-w-screen-2xl w-4/5 min-h-screen m-auto py-16 flex flex-col items-center justify-center">
+                <img class="w-3/4 max-w-xs" src="resources/model1.png" alt="">
+                <h1 class="text-4xl lg:text-5xl text-white text-center mt-3">Prashant Kaushal</h1>
+
+            </div>
+        </div>
+        <div class="about main w-full min-h-screen bg-yellow-400 py-10" id="about-section">
+            <div
+                class="content-about 2xl:max-w-screen-2xl w-4/5 min-h-screen m-auto flex flex-col lg:flex-row items-center justify-center">
+                <div class="image lg:w-1/3 ">
+                    <img src="resources/Group 4.jpg" class="rounded-2xl w-4/5 m-auto max-w-md" alt="">
+                </div>
+                <div class="text-about mt-8 lg:w-2/3  ">
+                    <h3 class="text-xl 2xl:text-3xl font-medium text-[#fb4b4b]">Discover me</h3>
+                    <h2 class="text-3xl 2xl:text-5xl font-semibold text-white">About Me</h2>
+                    <hr class="line">
+                    <p class="text-lg 2xl:text-2xl 2xl:leading-10 mt-5 text-white">My name is Prashant Kaushal. I’m a
+                        Computer
+                        Science student and a
+                        freelancer. I’m very passionate
+                        about Tech , Art, Science , Philosophy and Architecture. I’m on a journey to equip myself with
+                        tools and useful thoughts. i would love to connect to people to learn from each other.</p>
+                    <div class="social-about mt-5 p-7 hidden md:block">
+                        <div class="social-platform float-left mr-10 text-white text-lg font-bold">
+                            <p>Linkedin</p>
+                            <p>Instagram</p>
+                            <p>Youtube</p>
+                            <p>Twiter</p>
+                        </div>
+                        <div class="social-link text-lg font-normal text-white">
+                            <p>prashant-kaushal</p>
+                            <p>prashantkaushal9712</p>
+                            <p>The learning robo</p>
+                            <p>P_Kaushal9712</p>
+                        </div>
+                    </div>
+                    <div class="download-cv mt-5 hidden md:block">
+                        <a href="resources/resume.pdf"><button href="resources/resume.pdf"
+                                class="cv-button form-button p-2 text-lg font-semibold text-white">Download
+                                CV</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="service main w-full min-h-screen bg-green-400 py-10" id="service-section">
+            <div class="content-service 2xl:max-w-screen-2xl min-h-screen m-auto w-4/5 flex flex-col justify-center">
+                <h3 class="text-xl xl:text-3xl font-medium text-[#fb4b4b]">What I do</h3>
+                <h2 class="text-3xl xl:text-5xl font-semibold text-white">My Services</h2>
+                <hr class="line ">
+                <div class="services w-full lg:flex lg:gap-3">
+                    <div class="service w-full lg:w-1/3 mt-5 p-5">
+                        <img src="resources/vector1.png" class="h-10 xl:h-20" alt="">
+                        <h2 class="mt-4 text-2xl xl:text-3xl font-semibold text-white">Creative Design</h2>
+                        <p class="mt-4 text-lg xl:text-2xl text-white">I can Design Graphics like posters, insta posts,
+                            thumbnails, illustartion, cover pages and many more.</p>
+                    </div>
+                    <div class="service w-full lg:w-1/3 mt-5 p-5">
+                        <img src="resources/vector2.png" class="h-10 xl:h-20" alt="">
+                        <h2 class="mt-4 text-2xl xl:text-3xl font-semibold text-white">User Interface</h2>
+                        <p class="mt-4 text-lg xl:text-2xl text-white">I have the knowledge of things that goes to
+                            design user
+                            Interfaces of websites, apps.</p>
+                    </div>
+                    <div class="service w-full lg:w-1/3 mt-5 p-5">
+                        <img src="resources/vector3.png" class="h-10 xl:h-20" alt="">
+                        <h2 class="mt-4 text-2xl xl:text-3xl font-semibold text-white">Editing</h2>
+                        <p class="mt-4 text-lg xl:text-2xl text-white">I have the skills to edit and manipulate videos
+                            .I can make
+                            your videos more interesting.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="contact main w-full relative min-h-screen bg-purple-300 pt-10 pb-20" id="contact-section">
+            <div
+                class="content-contact 2xl-max-w-screen-2xl min-h-screen m-auto w-4/5 flex items-center flex-col justify-center md:flex-row-reverse">
+                <div class="contact-right md:w-1/2 flex flex-col ">
+                    <h2 class=" text-7xl text-white">Contact</h2>
+                    <div class="contact-info flex text-white items-center  mt-5">
+                        <hr class="line w-40 mr-10">
+                        <h2 class="text-7xl">Us</h2>
+
+                    </div>
+
+                    <p class="text-lg mt-10 text-white">it’s very important to keep in Touch. <br>
+                        Lets connect every way possible.</p>
+                </div>
+                <div class="contact-left md:w-1/2 flex flex-col md:items-end md:mr-10">
+                    <form name="submit-to-google-sheet">
+                        <input
+                            class="outline-none border-white text-white border-b bg-transparent text-xl mt-10 block w-full  md:w-2/3 max-w-sm"
+                            type="text" name="Name" placeholder="Enter your name">
+                        <input
+                            class="outline-none border-white text-white border-b bg-transparent text-xl mt-10 block w-full  md:w-2/3 max-w-sm"
+                            type="email" name="Email" placeholder="Enter your email">
+                        <textarea
+                            class="resize-none outline-none text-white border-white  border-b text-xl mt-10 bg-transparent w-full  md:w-2/3  max-w-sm "
+                            placeholder="Share your thoughts" name="Message" cols="20" rows="3"></textarea>
+
+                        <button class="form-button block p-2 text-lg font-semibold text-white mt-5 bg-[#fb4b4b]"
+                            type="submit">Submit</button>
+                    </form>
+                    <span id="msg" class="italic text-white pt-5 font-thin "></span>
+                </div>
+                <hr class="absolute w-full bottom-16">
+                <div class="footer w-3/4 h-16 max-w-xs m-auto absolute bottom-0 items-center flex justify-between">
+                    <a href="https://www.facebook.com/prashant.kaushal.1291">
+                        <iconify-icon icon="ic:baseline-facebook" style="color: #f8f8f866;" width="48" height="48">
+                        </iconify-icon>
+                    </a>
+                    <a href="https://www.instagram.com/prashantkaushal9712/">
+                        <iconify-icon icon="ri:instagram-fill" style="color: #f8f8f866;" width="48" height="48">
+                        </iconify-icon>
+                    </a>
+                    <a href="http://www.linkedin.com/in/prashant-kaushal">
+                        <iconify-icon icon="mdi:linkedin" style="color: #f8f8f866;" width="48"
+                            height="48"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log("hello")
+                if (entry.isIntersecting == true) {
+
+                    navlist[mArray.indexOf(entry.target)].classList.add('active');
+                    navlist2[mArray.indexOf(entry.target)].classList.add('active');
+
+
+                } else {
+                    navlist[mArray.indexOf(entry.target)].classList.remove('active');
+                    navlist2[mArray.indexOf(entry.target)].classList.remove('active');
+                }
+            })
+        }, { threshold: [0.5] });
+        const boxElList = document.querySelectorAll('.main');
+        const navlist = document.querySelectorAll('.navigation-item');
+        const navlist2 = document.querySelectorAll('.navigation-item2');
+        let mArray = Array.from(boxElList);
+
+        boxElList.forEach((el) => {
+            io.observe(el);
+        })
+
+        const menu = document.querySelector('#mobile-menu')
+        const menuLinks = document.querySelector('.mobile-nav')
+
+        const mobileMenu = () => {
+            menu.classList.toggle('is-start')
+            menuLinks.classList.toggle('start')
+        }
+        menu.addEventListener('click', mobileMenu);
+        document.addEventListener('click', function handleClickOutsideBox(event) {
+            const box = document.getElementById('mobile-nav');
+            const box2 = document.getElementById('mobile-menu')
+
+            if (!(box.contains(event.target) || box2.contains(event.target)) && (menu.classList.contains('is-start'))) {
+                menuLinks.classList.toggle('start');
+                menu.classList.toggle('is-start')
+            }
+        });
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx7LIm231HuG9H7NC0j6wP9jGoAat9nKbQC_qo1FhFm3orIXxT83zQKojrvAnpDPubm/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML="Message sent successfully!"
+                    setTimeout(function(){
+                        msg.innerHTML=""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+
+    </script>
+</body>
+
+</html>
