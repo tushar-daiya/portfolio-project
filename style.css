@@ -10,33 +10,45 @@
 :root {
     --font1: 'Poppins', sans-serif;
     --font2: 'Montserrat', sans-serif;
-    --main-color:#fb4b4b;
+    --main-color:#ef4444;
 }
 html{
     scroll-behavior: smooth;
 }
 @media screen and (max-width:1024px){
     .main-body .home .navbar-parent .navbar .navbar_toggle .bar{
-        transition: all 500ms ease-in-out;
+        transform: (5%,20%);
     }
     .main-body .home .navbar-parent .navbar .navbar_toggle.is-start .bar:nth-child(2){
         opacity: 0;
+        
     }
     .main-body .home .navbar-parent .navbar .navbar_toggle.is-start .bar:nth-child(1){
         transform: translateY(8px) rotate(45deg);
+        transition: all 500ms ease;
     }
     .main-body .home .navbar-parent .navbar .navbar_toggle.is-start .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
+        transition: all 500ms ease;
+    }
+    .main-body.dark .home .navbar-parent .navbar .mobile-nav{
+        background: linear-gradient(180deg, #444444 0%, #000000 100%);;
+        transition: all 1ms ease;
+        top: -1000px;
+        left: 0;
+        position: absolute;
     }
     .main-body .home .navbar-parent .navbar .mobile-nav{
-        background: linear-gradient(180deg, #444444 0%, #000000 100%);;
-        transition: all 500ms ease-in-out;
+        background: white;
+        transition: all 1ms ease;
         top: -1000px;
+        left: 0;
         position: absolute;
     }
     .main-body .home .navbar-parent .navbar .mobile-nav.start{
         top: 0;
-        transition: all 0.5s ease-in-out;
+        left: 0;
+        transition: all 500ms ease;
 
     }
 }
@@ -44,18 +56,18 @@ html{
 background-image: url(./resources/nasa.jpg);
 background-repeat: no-repeat;
 background-position: center;
-background-attachment: fixed;
+
 background-size: cover;
 }
-.main-body .about{
+.main-body.dark .about{
     background: linear-gradient(180deg, #000000 0%, #313131 100%);
 }
 
-.main-body .service{
+.main-body.dark .service{
     background: linear-gradient(180deg, #000000 0%, #313131 100%);
 }
 
-.main-body .contact{
+.main-body.dark .contact{
     background: linear-gradient(180deg, #000000 0%, #2F2F2F 100%);
 }
 h3{
@@ -67,9 +79,10 @@ h2,p{
 .line{
     background-color: var(--main-color);
     border: 3px solid var(--main-color);
-    width: 100px;
+    width: 160px;
     height: 5px;
     border-radius: 100px;
+    margin-top: 10px;
 }
 .main-body .about .content-about .text-about .social-about{
     border: 5px solid var(--main-color);
@@ -86,11 +99,17 @@ h2,p{
     border-radius: 10px;
 }
 a:hover{
-    color: var(--main-color)
+    color: var(--main-color);
+    transition: all 500ms ease;
+}
+iconify-icon:hover{
+    color: var(--main-color);
+    transition: all 500ms ease;
 }
 
 .active{
     color: var(--main-color);
+    transition: all 500ms ease;
 }
 
 
