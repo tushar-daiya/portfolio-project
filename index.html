@@ -205,6 +205,8 @@
         </div>
     </div>
     <script>
+
+        //script for color change on section change
         const io = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
 
@@ -225,6 +227,8 @@
             io.observe(el);
         })
 
+        //script for contact form submit
+
         const scriptURL = 'https://script.google.com/macros/s/AKfycbx7LIm231HuG9H7NC0j6wP9jGoAat9nKbQC_qo1FhFm3orIXxT83zQKojrvAnpDPubm/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
@@ -240,6 +244,9 @@
                 })
                 .catch(error => console.error('Error!', error.message))
         })
+
+
+        //script for mobile menu open
         const menu = document.querySelector('#mobile-menu')
         const menuLinks = document.querySelector('.mobile-nav')
 
@@ -260,6 +267,7 @@
             }
         });
 
+        //script for dark and light mode
         const sunLogo = document.querySelector('.sun')
         const moonLogo = document.querySelector('.moon')
         const userTheme = localStorage.getItem('theme')
