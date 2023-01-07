@@ -20,12 +20,12 @@
                 <div
                     class="navbar 2xl:max-w-screen-2xl m-auto dark:bg-black bg-white flex h-16 justify-between items-center ">
 
-                    <a href="index.html"><iconify-icon icon="dashicons:portfolio" class=" z-10 dark:text-white text-black" width="48"
-                        height="48"></iconify-icon></a>
+                    <a href="index.html"><iconify-icon icon="dashicons:portfolio"
+                            class=" z-10 dark:text-white text-black" width="48" height="48"></iconify-icon></a>
                     <ul
                         class="navigation-large list-none font-bold dark:text-white  text-black lg:text-xl gap-5 px-8 hidden lg:flex">
                         <a href="#home-section">
-                            <li class="navigation-item">Home</li>
+                            <li class="navigation-item active">Home</li>
                         </a>
                         <a href="#about-section">
                             <li class="navigation-item">About</li>
@@ -100,10 +100,19 @@
                             <p>Twiter</p>
                         </div>
                         <div class="social-link text-lg font-normal dark:text-white  text-black ">
-                            <p>prashant-kaushal</p>
-                            <p>prashantkaushal9712</p>
-                            <p>The learning robo</p>
-                            <p>P_Kaushal9712</p>
+                            <a href="https://www.linkedin.com/in/prashant-kaushal">
+                                <p>prashant-kaushal</p>
+                            </a>
+                            <a href="https://www.instagram.com/prashantkaushal9712/">
+                                <p>prashantkaushal9712</p>
+                            </a>
+                            <a href="https://www.youtube.com/@thelearningrobo146">
+                                <p>The learning robo</p>
+                            </a>
+                            <a href="https://twitter.com/P_Kaushal9712">
+                                <p>P_Kaushal9712</p>
+                            </a>
+
                         </div>
                     </div>
                     <div class="download-cv mt-5 ">
@@ -178,11 +187,19 @@
                             class="resize-none outline-none dark:text-white  text-black  border-black dark:border-white  border-b text-xl mt-10 bg-transparent w-full  max-w-sm "
                             placeholder="Share your thoughts" name="Message" cols="20" rows="3"></textarea>
 
-                        <button
-                            class="form-button block p-2 text-lg font-semibold dark:text-white  text-black  mt-5 bg-red-500 self-baseline"
-                            type="submit">Submit</button>
+                        <div class="flex self-baseline items-center">
+                            <button
+                                class="form-button block p-2 text-lg font-semibold dark:text-white  text-black  mt-5 bg-red-500 self-baseline"
+                                type="submit">Submit</button>
+                            <span id="msg" class="italic dark:text-white  text-black pl-5 pt-5 font-thin ">
+                                
+                            </span>
+                            <div class="process-icon pt-5 hidden ">
+                                <img class="h-12" src="./resources/process-4.svg" alt="">
+                            </div>
+                        </div>
                     </form>
-                    <span id="msg" class="italic dark:text-white  text-black  pt-5 font-thin "></span>
+
                 </div>
                 <hr class="absolute w-full bottom-16 h-0.5 bg-black dark:bg-white">
                 <div class="footer w-3/4 h-16 max-w-xs m-auto absolute bottom-0 items-center flex justify-between">
@@ -203,29 +220,24 @@
                 </div>
             </div>
         </div>
+
     </div>
     <script>
 
+
         //script for color change on section change
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-                    navlist[mArray.indexOf(entry.target)].classList.add('active');
-                } else {
-
-                    navlist[mArray.indexOf(entry.target)].classList.remove('active');
-
+        const sections = document.querySelectorAll('.main');
+        const navLinks = document.querySelectorAll('.navigation-item');
+        window.addEventListener('scroll', function () {
+            for (let i = 0; i < sections.length; i++) {
+                const rect = sections[i].getBoundingClientRect();
+                if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks[i].classList.add('active');
+                    break;
                 }
-            })
-        }, { threshold: [0.45] });
-        const boxElList = document.querySelectorAll('.main');
-        const navlist = document.querySelectorAll('.navigation-item');
-        let mArray = Array.from(boxElList);
-
-        boxElList.forEach((el) => {
-            io.observe(el);
-        })
+            }
+        });
 
         //script for contact form submit
 
@@ -234,6 +246,7 @@
         const msg = document.getElementById("msg")
         form.addEventListener('submit', e => {
             e.preventDefault()
+            document.querySelector('.process-icon').style.display = 'block';
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
                     msg.innerHTML = "Message sent successfully!"
@@ -242,8 +255,11 @@
                     }, 5000)
                     form.reset()
                 })
-                .catch(error => console.error('Error!', error.message))
-        })
+                .catch(error => console.error('Error!', error.message)).finally(() => {
+                    // Hide the loading icon
+                    document.querySelector('.process-icon').style.display = 'none';
+                });
+        });
 
 
         //script for mobile menu open
@@ -253,7 +269,7 @@
         const mobileMenu = () => {
             menu.classList.toggle('is-start')
             menuLinks.classList.toggle('start')
-            
+
         }
         menu.addEventListener('click', mobileMenu);
         document.addEventListener('click', function handleClickOutsideBox(event) {
@@ -263,7 +279,7 @@
             if (!(box.contains(event.target) || box2.contains(event.target)) && (menu.classList.contains('is-start'))) {
                 menuLinks.classList.toggle('start');
                 menu.classList.toggle('is-start')
-                
+
             }
         });
 
