@@ -64,7 +64,7 @@
             </div>
             <div
                 class="content-home 2xl:max-w-screen-2xl w-4/5 min-h-screen m-auto py-16 flex flex-col items-center justify-center">
-                <img class="w-3/4 max-w-xs" src="resources/model1.png" alt="">
+                <img class="w-3/4 max-w-xs" src="resources/image1.png" alt="">
                 <h1 class="text-4xl lg:text-5xl text-white text-center mt-3">Prashant Kaushal</h1>
 
             </div>
@@ -79,7 +79,7 @@
             <div
                 class="content-about 2xl:max-w-screen-2xl w-4/5 min-h-screen  m-auto flex flex-col lg:flex-row items-center justify-center">
                 <div class="image lg:w-1/3 ">
-                    <img src="resources/Group 4.jpg" class="rounded-2xl w-4/5 m-auto max-w-md shadow-slate-400 " alt="">
+                    <img src="resources/image2.jpg" class="rounded-2xl w-4/5 m-auto max-w-md shadow-slate-400 " alt="">
                 </div>
                 <div class="text-about mt-8 lg:w-2/3  ">
                     <h3 class="text-xl 2xl:text-3xl font-medium text-red-500">Discover me</h3>
@@ -176,7 +176,8 @@
                         Lets connect every way possible.</p>
                 </div>
                 <div class="contact-left md:w-1/2 flex flex-col md:items-end md:mr-10">
-                    <form class="w-full max-w-sm flex flex-col md:items-end" name="submit-to-google-sheet">
+                    <form autocomplete="off" class="w-full max-w-sm flex flex-col md:items-end" name="contact-form"
+                        action="https://formbold.com/s/oejQk" method="POST">
                         <input
                             class="outline-none border-black dark:border-white dark:text-white  text-black  border-b bg-transparent text-xl mt-10 block w-full max-w-sm"
                             type="text" name="Name" placeholder="Enter your name" required>
@@ -192,7 +193,7 @@
                                 class="form-button block p-2 text-lg font-semibold dark:text-white  text-black  mt-5 bg-red-500 self-baseline"
                                 type="submit">Submit</button>
                             <span id="msg" class="italic dark:text-white  text-black pl-5 pt-5 font-thin ">
-                                
+
                             </span>
                             <div class="process-icon pt-5 hidden ">
                                 <img class="h-12" src="./resources/process-4.svg" alt="">
@@ -241,25 +242,10 @@
 
         //script for contact form submit
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbx7LIm231HuG9H7NC0j6wP9jGoAat9nKbQC_qo1FhFm3orIXxT83zQKojrvAnpDPubm/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            document.querySelector('.process-icon').style.display = 'block';
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully!"
-                    setTimeout(function () {
-                        msg.innerHTML = ""
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message)).finally(() => {
-                    // Hide the loading icon
-                    document.querySelector('.process-icon').style.display = 'none';
-                });
-        });
+        // const form = document.forms['contact-form']
+        // form.addEventListener('submit', e => {
+        //     form.reset()
+        // });
 
 
         //script for mobile menu open
